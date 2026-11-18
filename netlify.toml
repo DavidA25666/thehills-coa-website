@@ -1,0 +1,23 @@
+[build]
+  publish = "."
+
+# Keep the old WordPress document URLs working after the move.
+[[redirects]]
+  from = "/wp-content/uploads/2023/04/13X8349-House-Rules-and-Regulations.pdf"
+  to = "/assets/docs/13X8349-House-Rules-and-Regulations.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/uploads/2023/04/14K6970-Amended-and-Restated-Decs-date-stamped-copy-recorded-09-06-13-2.pdf"
+  to = "/assets/docs/14K6970-Amended-and-Restated-Decs-date-stamped-copy-recorded-09-06-13-2.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/uploads/2023/04/*"
+  to = "/assets/:splat"
+  status = 301
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
